@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+<!--svg-->
+<div id="demoCanvas" class="incentive-animate"></div>
+
+<script src="./svga.min.js"></script>
+<script>
+  var player = new SVGA.Player('#demoCanvas');
+  var parser = new SVGA.Parser('#demoCanvas'); // 如果你需要支持 IE6+，那么必须把同样的选择器传给 Parser。
+  parser.load('angel.svga', function(videoItem) {
+    player.setVideoItem(videoItem);
+    player.startAnimation();
+  })
+</script>
+</body>
+</html>
